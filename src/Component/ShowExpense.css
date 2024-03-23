@@ -1,0 +1,14 @@
+.expense_data{
+    display: flex;
+    justify-content: space-between;
+    padding:13px;
+    margin:5px;
+    border:1px solid rgb(204, 201, 201);
+    background-color: #F8F9FA;
+    border-radius: 5px;
+}
+.expense_data span{
+    font-size: 16px;
+    color: #747679;
+  
+}

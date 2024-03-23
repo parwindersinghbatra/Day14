@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import AddExpense from './Component/AddExpense';
+import OverView from './Component/OverView';
+import ShowExpense from './Component/ShowExpense';
+import { useState, useContext, createContext } from 'react';
 
+export const Context = createContext()
 function App() {
+
+  const [totalExpense, setTotalExpense] = useState(0)
+  const [expenseData, setExpenseData] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Context.Provider value={{totalExpense, setTotalExpense, expenseData, setExpenseData}}>
+      
+    <div className='container'>
+      <OverView/>
+      <ShowExpense/>
+      <AddExpense/>
+
+      {/* <OverView totalExpense ={totalExpense}/>
+      <ShowExpense expenseData={expenseData}/>
+      <AddExpense setTotalExpense ={setTotalExpense} setExpenseData={setExpenseData}/> */}
     </div>
+    </Context.Provider>
   );
 }
 

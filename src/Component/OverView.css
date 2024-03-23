@@ -1,0 +1,10 @@
+.Navbar{
+    display:flex;
+    justify-content: space-between;
+}
+.Navbar div{
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    
+}
